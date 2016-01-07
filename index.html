@@ -206,7 +206,7 @@
   
     <div class="article-meta">
       <a href="/2016/01/07/MengTime实现过程遇到的问题总结/" class="article-date">
-  	<time datetime="2016-01-07T08:51:36.000Z" itemprop="datePublished">2016-01-07</time>
+  	<time datetime="2016-01-07T10:05:58.000Z" itemprop="datePublished">2016-01-07</time>
 </a>
     </div>
   
@@ -219,7 +219,12 @@
       
         <h1 id="MengTime_u5B9E_u73B0_u8FC7_u7A0B_u9047_u5230_u7684_u95EE_u9898_u603B_u7ED3"><a href="#MengTime_u5B9E_u73B0_u8FC7_u7A0B_u9047_u5230_u7684_u95EE_u9898_u603B_u7ED3" class="headerlink" title="MengTime实现过程遇到的问题总结"></a>MengTime实现过程遇到的问题总结</h1><hr>
 <h3 id="1-_XCTest/XCTest-h_file_not_found"><a href="#1-_XCTest/XCTest-h_file_not_found" class="headerlink" title="1. XCTest/XCTest.h file not found"></a>1. XCTest/XCTest.h file not found</h3><p>解决方法：<br>在报错的<code>target</code>的<code>Building Settings</code>中的<code>Framwork Search Paths</code>添加<code>$(PLATFORM_DIR)/Developer/Library/Frameworks</code></p>
-
+<h3 id="2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found"><a href="#2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found" class="headerlink" title="2. Xcode升级到7.2后，项目中出现”xxx.h” file not found"></a>2. Xcode升级到7.2后，项目中出现”xxx.h” file not found</h3><p>解决方法：<br>在项目中的<code>Header Search Paths</code>中添加<code>$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME/include</code></p>
+<h3 id="3-_App_TransportSecurity_has_blocked_a_cleartext_HTTP__28http_3A//_29_resource_load_since_it_isinsecure-_Temporary_exceptions_can_be_configured_via_your_app_u2019s_Info-plistfile"><a href="#3-_App_TransportSecurity_has_blocked_a_cleartext_HTTP__28http_3A//_29_resource_load_since_it_isinsecure-_Temporary_exceptions_can_be_configured_via_your_app_u2019s_Info-plistfile" class="headerlink" title="3. App TransportSecurity has blocked a cleartext HTTP (http://) resource load since it isinsecure. Temporary exceptions can be configured via your app’s Info.plistfile."></a>3. App TransportSecurity has blocked a cleartext HTTP (http://) resource load since it isinsecure. Temporary exceptions can be configured via your app’s Info.plistfile.</h3><p>貌似是Xcode7禁用了HTTP明文传输，它不安全，苹果将HTTP协议改成了HTTPS协议。<br>解决方法：<br>在<code>Info.plist</code>文件中添加<code>App Transport Security Settings</code>，<code>Type</code>→<code>Dictionary</code>，在该项中再添加<code>Allow Arbitrary Loads</code>，其<code>Type</code>→<code>Boolean</code>，<code>Value</code>→<code>YES</code></p>
+<h3 id="4-_Error_Domain_3Dcom-alamofire-error-serialization-response_Code_3D-1016__u201CRequest_failed_3A_unacceptable_content-type_3A_text/html_u201D"><a href="#4-_Error_Domain_3Dcom-alamofire-error-serialization-response_Code_3D-1016__u201CRequest_failed_3A_unacceptable_content-type_3A_text/html_u201D" class="headerlink" title="4. Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”"></a>4. Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”</h3><p>在使用<code>AFNetWorking 3.0</code>时，发送网络请求提示如下错误：</p>
+<pre><code>Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”
+</code></pre><p>在网上查了下，有人说是AFNetworing本身的问题，解析格式不全，所以需要在AFURLResponseSerialization.m中修改一行代码：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改前</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.acceptableContentTypes</span> = [<span class="built_in">NSSet</span> setWithObjects:<span class="string">@"application/json"</span>, <span class="string">@"text/json"</span>, <span class="string">@"text/javascript"</span>,<span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改后</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.acceptableContentTypes</span> = [<span class="built_in">NSSet</span> setWithObjects:<span class="string">@"application/json"</span>, <span class="string">@"text/json"</span>, <span class="string">@"text/javascript"</span>, <span class="string">@"text/html"</span>,<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure></p>
+<p>试了一下，确实可以。但这样不是很好，<code>AFNetworking</code>在持续更新，不宜修改（在做修改时，<code>Xcode</code>会给出提示）,当使用<code>CocoaPods</code>更新三方库，则该错误会重复出现。怎样好一点，暂时没去做深入研究，在这个项目中，暂时这样修改的。</p>
       
     </div>
     
@@ -228,6 +233,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/07/MengTime实现过程遇到的问题总结/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
