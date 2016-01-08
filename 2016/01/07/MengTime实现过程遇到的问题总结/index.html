@@ -4,24 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>paomoliu&#39;s blog</title>
+  <title>MengTime实现过程遇到的问题总结 | paomoliu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MengTime实现过程遇到的问题总结
-1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
-2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解">
+  <meta name="description" content="1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
+2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解决方法：在项目中的Header Sear">
 <meta property="og:type" content="article">
-<meta property="og:title" content="paomoliu's blog">
+<meta property="og:title" content="MengTime实现过程遇到的问题总结">
 <meta property="og:url" content="http://paomoliu.github.io/2016/01/07/MengTime实现过程遇到的问题总结/index.html">
 <meta property="og:site_name" content="paomoliu's blog">
-<meta property="og:description" content="MengTime实现过程遇到的问题总结
-1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
-2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解">
-<meta property="og:updated_time" content="2016-01-07T13:30:24.000Z">
+<meta property="og:description" content="1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
+2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解决方法：在项目中的Header Sear">
+<meta property="og:updated_time" content="2016-01-08T05:57:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="paomoliu's blog">
-<meta name="twitter:description" content="MengTime实现过程遇到的问题总结
-1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
-2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解">
+<meta name="twitter:title" content="MengTime实现过程遇到的问题总结">
+<meta name="twitter:description" content="1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
+2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解决方法：在项目中的Header Sear">
   
   
     <link rel="icon" href="/favicon.png">
@@ -112,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
 					</div>
 				</section>
 				
@@ -180,7 +177,7 @@
   
     <div class="article-meta">
       <a href="/2016/01/07/MengTime实现过程遇到的问题总结/" class="article-date">
-  	<time datetime="2016-01-07T13:30:24.000Z" itemprop="datePublished">1月 7 2016</time>
+  	<time datetime="2016-01-07T08:53:54.000Z" itemprop="datePublished">1月 7 2016</time>
 </a>
     </div>
   
@@ -189,10 +186,31 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MengTime实现过程遇到的问题总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MengTime_u5B9E_u73B0_u8FC7_u7A0B_u9047_u5230_u7684_u95EE_u9898_u603B_u7ED3"><a href="#MengTime_u5B9E_u73B0_u8FC7_u7A0B_u9047_u5230_u7684_u95EE_u9898_u603B_u7ED3" class="headerlink" title="MengTime实现过程遇到的问题总结"></a>MengTime实现过程遇到的问题总结</h1><hr>
-<h3 id="1-_XCTest/XCTest-h_file_not_found"><a href="#1-_XCTest/XCTest-h_file_not_found" class="headerlink" title="1. XCTest/XCTest.h file not found"></a>1. XCTest/XCTest.h file not found</h3><p>解决方法：<br>在报错的<code>target</code>的<code>Building Settings</code>中的<code>Framwork Search Paths</code>添加<code>$(PLATFORM_DIR)/Developer/Library/Frameworks</code></p>
+        <h3 id="1-_XCTest/XCTest-h_file_not_found"><a href="#1-_XCTest/XCTest-h_file_not_found" class="headerlink" title="1. XCTest/XCTest.h file not found"></a>1. XCTest/XCTest.h file not found</h3><p>解决方法：<br>在报错的<code>target</code>的<code>Building Settings</code>中的<code>Framwork Search Paths</code>添加<code>$(PLATFORM_DIR)/Developer/Library/Frameworks</code></p>
 <h3 id="2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found"><a href="#2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found" class="headerlink" title="2. Xcode升级到7.2后，项目中出现”xxx.h” file not found"></a>2. Xcode升级到7.2后，项目中出现”xxx.h” file not found</h3><p>解决方法：<br>在项目中的<code>Header Search Paths</code>中添加<code>$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME/include</code></p>
 <a id="more"></a>
 <h3 id="3-_App_TransportSecurity_has_blocked_a_cleartext_HTTP__28http_3A//_29_resource_load_since_it_isinsecure-_Temporary_exceptions_can_be_configured_via_your_app_u2019s_Info-plistfile"><a href="#3-_App_TransportSecurity_has_blocked_a_cleartext_HTTP__28http_3A//_29_resource_load_since_it_isinsecure-_Temporary_exceptions_can_be_configured_via_your_app_u2019s_Info-plistfile" class="headerlink" title="3. App TransportSecurity has blocked a cleartext HTTP (http://) resource load since it isinsecure. Temporary exceptions can be configured via your app’s Info.plistfile."></a>3. App TransportSecurity has blocked a cleartext HTTP (http://) resource load since it isinsecure. Temporary exceptions can be configured via your app’s Info.plistfile.</h3><p>貌似是Xcode7禁用了HTTP明文传输，它不安全，苹果将HTTP协议改成了HTTPS协议。<br>解决方法：<br>在<code>Info.plist</code>文件中添加<code>App Transport Security Settings</code>，<code>Type</code>→<code>Dictionary</code>，在该项中再添加<code>Allow Arbitrary Loads</code>，其<code>Type</code>→<code>Boolean</code>，<code>Value</code>→<code>YES</code></p>
@@ -236,7 +254,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="MengTime实现过程遇到的问题总结" data-title="" data-url="http://paomoliu.github.io/2016/01/07/MengTime实现过程遇到的问题总结/"></div>
+	<div class="ds-thread" data-thread-key="MengTime实现过程遇到的问题总结" data-title="MengTime实现过程遇到的问题总结" data-url="http://paomoliu.github.io/2016/01/07/MengTime实现过程遇到的问题总结/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
