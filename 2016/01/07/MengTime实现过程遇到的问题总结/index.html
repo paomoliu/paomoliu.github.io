@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="paomoliu's blog">
 <meta property="og:description" content="1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
 2. Xcode升级到7.2后，项目中出现”xxx.h” file not found解决方法：在项目中的Header Sear">
-<meta property="og:updated_time" content="2016-01-29T09:52:12.000Z">
+<meta property="og:updated_time" content="2016-01-29T10:42:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MengTime实现过程遇到的问题总结">
 <meta name="twitter:description" content="1. XCTest/XCTest.h file not found解决方法：在报错的target的Building Settings中的Framwork Search Paths添加$(PLATFORM_DIR)/Developer/Library/Frameworks
@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AutoLayout/" style="font-size: 20px;">AutoLayout</a> <a href="/tags/VFL/" style="font-size: 20px;">VFL</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
+						<a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/VFL/" style="font-size: 10px;">VFL</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
 					</div>
 				</section>
 				
@@ -214,9 +214,10 @@
 <h3 id="2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found"><a href="#2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found" class="headerlink" title="2. Xcode升级到7.2后，项目中出现”xxx.h” file not found"></a>2. Xcode升级到7.2后，项目中出现”xxx.h” file not found</h3><p>解决方法：<br>在项目中的<code>Header Search Paths</code>中添加<code>$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME/include</code><br><a id="more"></a></p>
 <h3 id="3-_App_TransportSecurity_has_blocked_a_cleartext_HTTP__28http_3A//_29_resource_load_since_it_isinsecure-_Temporary_exceptions_can_be_configured_via_your_app_u2019s_Info-plistfile"><a href="#3-_App_TransportSecurity_has_blocked_a_cleartext_HTTP__28http_3A//_29_resource_load_since_it_isinsecure-_Temporary_exceptions_can_be_configured_via_your_app_u2019s_Info-plistfile" class="headerlink" title="3. App TransportSecurity has blocked a cleartext HTTP (http://) resource load since it isinsecure. Temporary exceptions can be configured via your app’s Info.plistfile."></a>3. App TransportSecurity has blocked a cleartext HTTP (http://) resource load since it isinsecure. Temporary exceptions can be configured via your app’s Info.plistfile.</h3><p>貌似是Xcode7禁用了HTTP明文传输，它不安全，苹果将HTTP协议改成了HTTPS协议。<br>解决方法：<br>在<code>Info.plist</code>文件中添加<code>App Transport Security Settings</code>，<code>Type</code>→<code>Dictionary</code>，在该项中再添加<code>Allow Arbitrary Loads</code>，其<code>Type</code>→<code>Boolean</code>，<code>Value</code>→<code>YES</code></p>
 <h3 id="4-_Error_Domain_3Dcom-alamofire-error-serialization-response_Code_3D-1016__u201CRequest_failed_3A_unacceptable_content-type_3A_text/html_u201D"><a href="#4-_Error_Domain_3Dcom-alamofire-error-serialization-response_Code_3D-1016__u201CRequest_failed_3A_unacceptable_content-type_3A_text/html_u201D" class="headerlink" title="4. Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”"></a>4. Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”</h3><p>在使用<code>AFNetWorking 3.0</code>时，发送网络请求提示如下错误：</p>
-<p>Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”<br>在网上查了下，有人说是AFNetworing本身的问题，解析格式不全，所以需要在AFURLResponseSerialization.m中修改一行代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#20462;&#25913;&#21069;&#10;self.acceptableContentTypes = [NSSet setWithObjects:@&#34;application/json&#34;, @&#34;text/json&#34;, @&#34;text/javascript&#34;,nil];&#10;&#10;//&#20462;&#25913;&#21518;&#10;self.acceptableContentTypes = [NSSet setWithObjects:@&#34;application/json&#34;, @&#34;text/json&#34;, @&#34;text/javascript&#34;, @&#34;text/html&#34;,nil];</span><br></pre></td></tr></table></figure></p>
+<pre><code>Error Domain=com.alamofire.error.serialization.response Code=-1016 “Request failed: unacceptable content-type: text/html”
+</code></pre><p>在网上查了下，有人说是AFNetworing本身的问题，解析格式不全，所以需要在AFURLResponseSerialization.m中修改一行代码：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改前</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.acceptableContentTypes</span> = [<span class="built_in">NSSet</span> setWithObjects:<span class="string">@"application/json"</span>, <span class="string">@"text/json"</span>, <span class="string">@"text/javascript"</span>,<span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改后</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.acceptableContentTypes</span> = [<span class="built_in">NSSet</span> setWithObjects:<span class="string">@"application/json"</span>, <span class="string">@"text/json"</span>, <span class="string">@"text/javascript"</span>, <span class="string">@"text/html"</span>,<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure></p>
 <p>试了一下，确实可以。但这样不是很好，<code>AFNetworking</code>在持续更新，不宜修改（在做修改时，<code>Xcode</code>会给出提示）,当使用<code>CocoaPods</code>更新三方库，则该错误会重复出现。怎样好一点，暂时没去做深入研究，在这个项目中，暂时这样修改的。</p>
-<h3 id="5-__u5173_u95ED_u952E_u76D8_u95EE_u9898"><a href="#5-__u5173_u95ED_u952E_u76D8_u95EE_u9898" class="headerlink" title="5. 关闭键盘问题"></a>5. 关闭键盘问题</h3>
+<!--more-->
       
     </div>
     
@@ -225,7 +226,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/10/AutoLayout学习总结（纯代码）副本/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/10/AutoLayout学习总结（纯代码）/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
