@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://paomoliu.github.io/2016/01/10/AutoLayout学习总结（纯代码）/index.html">
 <meta property="og:site_name" content="paomoliu's blog">
 <meta property="og:description" content="从15年3月正式准备做ios开发，到五月底，团队完成属于我们的第一个App，一直没有使用AutoLayout进行布局，当时觉得这个东西好复杂、好难，再加上项目赶得急，就把它丢在一边。在15年接下来的几个月里，没怎么撸码，一直停留在书本上。偶尔遇到一点AutoLayout，会去搜点博客，了解一丢丢AutoLayout。后来发现公司里好多都用AutoLayout，再加上最近在研究开源中国的源代码，它使">
-<meta property="og:updated_time" content="2016-01-29T09:52:50.000Z">
+<meta property="og:updated_time" content="2016-01-29T10:00:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AutoLayout学习总结（纯代码）">
 <meta name="twitter:description" content="从15年3月正式准备做ios开发，到五月底，团队完成属于我们的第一个App，一直没有使用AutoLayout进行布局，当时觉得这个东西好复杂、好难，再加上项目赶得急，就把它丢在一边。在15年接下来的几个月里，没怎么撸码，一直停留在书本上。偶尔遇到一点AutoLayout，会去搜点博客，了解一丢丢AutoLayout。后来发现公司里好多都用AutoLayout，再加上最近在研究开源中国的源代码，它使">
@@ -253,7 +253,7 @@
 <li><code>[view(&gt;=100,&lt;=200)]</code>表示视图的宽度大于等于<code>100</code>且小于等于<code>200</code></li>
 <li><code>|-[view1(view2)]-[view2]-|</code>表示两视图的宽度一样，并在父视图的左右边缘内</li>
 <li><code>V:|-30-[view(100)]</code>表示视图的高度为<code>100</code>，且与父视图顶部间距为<code>30</code></li>
-<li><code>V:|-(==tpadding)-[view1]-&gt;=5-[view2]-(bpadding)|</code>表示两视图的间距必须大于等于<code>5</code>，<code>view1</code>距离父视图顶部<code>tpadding</code>，<code>view2</code>距离父视图底部<code>bpadding</code><br><strong><a href="/">部分示例源代码</a></strong></li>
+<li><code>V:|-(==tpadding)-[view1]-&gt;=5-[view2]-(bpadding)|</code>表示两视图的间距必须大于等于<code>5</code>，<code>view1</code>距离父视图顶部<code>tpadding</code>，<code>view2</code>距离父视图底部<code>bpadding</code><br><strong><a href="https://github.com/paomoliu/VFLDemo" target="_blank" rel="external">部分示例源代码</a></strong></li>
 </ol>
 </blockquote>
 <p><code>VFL</code>格式官方文档的介绍<a href="https://developer.apple.com/library/watchos/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage/VisualFormatLanguage.html" target="_blank" rel="external">Visul Format Language</a></p>
