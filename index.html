@@ -200,7 +200,7 @@
         <p>在研究<a href="http://git.oschina.net/oschina/iphone-app">开源中国</a>的源代码过程中，发现它里面的评论、点赞等按钮既有图又有文字，即所谓的<strong>图文混排</strong>，并不是我所想的<code>UIImageView＋UIButton</code>。里面还有一些属性字符串，支持链接、@等。这些都是利用<a href="https://github.com/Cocoanetics/DTCoreText">DTCoreText
 </a>和<a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel">TTTAttributedLabel
 </a>两个第三方库实现。于是想自己了解一下富文本相关的知识，开始学习该部分内容，做个小总结。这篇总结主要是参考官方文档。</p>
-<p><code>NSAttributedString</code>可以对字符串附加格式信息，比如字体和段落对齐。可以在整个字符串上使用这些元数据，也可以对字符串的不同部分使用不同的属性。其字符串是<strong>只读</strong>的。我们将字符与属性的关联称为<strong>属性字符串（attributed string）</strong>。<code>NSMutableAttributedString</code>是<code>NSAttributedString</code>的子类，它是可修改的属性字符串。<br>引用官方文档的定义：</p>
+<p><code>NSAttributedString</code>可以对字符串附加格式信息，比如字体和段落对齐。可以在整个字符串上使用这些元数据，也可以对字符串的不同部分使用不同的属性。其字符串是<strong>只读</strong>的。我们将字符与属性的关联称为<strong>属性字符串（attributed string）</strong>。<code>NSMutableAttributedString</code>是<code>NSAttributedString</code>的子类，它是可修改的属性字符串。</p>
       
     </div>
     
