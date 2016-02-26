@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://jbcdn2.b0.upaiyun.com/2012/08/Git-start3.png">
 <meta property="og:image" content="https://github.com/paomoliu/blog-backups/blob/master/source/assets/gitImg/001.jpg">
 <meta property="og:image" content="http://jbcdn2.b0.upaiyun.com/2012/08/Git-start6.png">
-<meta property="og:updated_time" content="2016-02-26T05:17:20.000Z">
+<meta property="og:updated_time" content="2016-02-26T05:23:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MengTime实现过程遇到的问题总结">
 <meta name="twitter:description" content="在大一下的一门选修课上第一次接触到git，当时所有的操作都是在Linux系统下进行，觉得十分的深奥。在后面的学习中，偶尔会用一用一些基本的命令，最近发现关于git的一些内容都忘了一些，于是重新拾起当时老师讲的课件，做一个复习总结，也方便自己以后查阅。
@@ -222,7 +222,7 @@
 <p>本章介绍使用<code>git</code>前的基础知识，了解版本控制系统（VCS），<code>git</code>项目的三个区域。下一篇总结<code>git</code>的常见用法。</p>
 <h2 id="1-__u4EC0_u4E48_u662F_u7248_u672C_u63A7_u5236_uFF1F"><a href="#1-__u4EC0_u4E48_u662F_u7248_u672C_u63A7_u5236_uFF1F" class="headerlink" title="1. 什么是版本控制？"></a>1. 什么是版本控制？</h2><p>版本控制是一种用于跟踪文件版本的系统，可以记录若干文件的内容变化，以便将来查阅特定版本修订情况。我们可以对任何类型的文件进行版本控制。</p>
 <p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本。采用版本控制系统是个明智的选择。有了它就可以将某个文件回溯到之前的状态，甚至将整个项目回退到过去某个时间点的状态。</p>
-<p>许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。这么做唯一的好处就是简单，不过坏处却不少：有时会混淆所在的工作目录，弄错了文件丢了数据就没了后退的路。</p>
+<p>许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。这么做唯一的好处就是简单，不过坏处却不少：有时会混淆所在的工作目录，弄错了文件丢了数据就没了后退的路。<br><a id="more"></a></p>
 <h3 id="1-1__u65E9_u671F_u7684_u7248_u672C_u63A7_u5236"><a href="#1-1__u65E9_u671F_u7684_u7248_u672C_u63A7_u5236" class="headerlink" title="1.1 早期的版本控制"></a>1.1 早期的版本控制</h3><p>在早期，源码的版本控制非常容易出错，通常是以简单的目录拷贝进行数据的备份，多个程序员通过文件服务器的共享目录进行协同，公共库和头文件在开发过程中相互覆盖，非常混乱。</p>
 <p>尽管如此，还是有非常好用的源码比较和补丁工具：<code>diff</code>和<code>patch</code>。</p>
 <h3 id="1-2__u4E0D_u540C_u7684_u7248_u672C_u63A7_u5236_u7CFB_u7EDF"><a href="#1-2__u4E0D_u540C_u7684_u7248_u672C_u63A7_u5236_u7CFB_u7EDF" class="headerlink" title="1.2  不同的版本控制系统"></a>1.2  不同的版本控制系统</h3><p>为了解决文件版本备份问题，人们很久以前就开发了许多种本地版本控制系统（图1-1），大多都是采用某种简单的数据库来记录文件的历次更新差异，后来又出现了用于多人协作开发的集中式版本控制系统（图1-2）。但这些系统的所有内容都严重依赖于中央数据库。</p>
