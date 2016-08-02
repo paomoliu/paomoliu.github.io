@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/SourceTree-SVN-git/" style="font-size: 10px;">SourceTree SVN git</a> <a href="/tags/VFL/" style="font-size: 10px;">VFL</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/richtext/" style="font-size: 10px;">richtext</a>
+						<a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SourceTree/" style="font-size: 10px;">SourceTree</a> <a href="/tags/VFL/" style="font-size: 10px;">VFL</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/richtext/" style="font-size: 10px;">richtext</a>
 					</div>
 				</section>
 				
@@ -208,20 +208,6 @@
 <li>设置指定的账户登录（我一般使用<code>github</code>帐号进行登录），也可以直接Skip该步骤；</li>
 <li>安装成功。</li>
 </ol>
-<h2 id="SourceTree_u8BBF_u95EESVN_u5730_u5740"><a href="#SourceTree_u8BBF_u95EESVN_u5730_u5740" class="headerlink" title="SourceTree访问SVN地址"></a>SourceTree访问SVN地址</h2><p><code>SourceTree</code>一般是与<code>github</code>等进行连接，若安装好之后，立即使用它访问<code>SVN</code>地址，会出现不能正常检测<code>SVN</code>地址的问题，所以必须得做一些配置。步骤如下：<br>1）终端命令：<code>svn ls https://192.168.0.24:8443/XXXXX/</code>（根据不同的<code>SVN</code>地址代替XXXXX部分），回车；<br>2) 查看回车后终端输出数据，在最后一行，选择部分，输入<code>p</code>，回车；<br>3)输入Mac密码。</p>
-<p>完成上面3步之后，<code>SourceTree</code>能够正确检测<code>SVN</code>地址，如图所示：<br><img src="http://pic.ffsky.net/image/kHg" alt="SourceTree成功检测SVN地址"><br>点击<code>Clone</code>之后，仍然报错，错误如下图所示：<br><img src="http://pic.ffsky.net/image/kHt" alt="SVN链接失败"></p>
-<p><code>Can’t locate SVN/Core.pm in @INC (you may need to install the SVN::Core module)</code>。这个问题大致是Per的<code>SVN</code>没有正确和<code>Xcode</code>中的<code>SVN</code>链接起来。解决的步骤如下：</p>
-<ol>
-<li><p>安装<code>Xcode</code>的<code>Command Line Tools</code>组件<br>安装步骤如下：<br>1）输入终端命令：<br><img src="http://pic.ffsky.net/image/kHy" alt="安装Xcode组件终端命令"></p>
-<p>2）然后出现下图，点击“安装”：<br><img src="http://pic.ffsky.net/image/kHK" alt="安装Command Line Tools工具"><br><img src="http://pic.ffsky.net/image/kHK" alt="等待安装Command Line Tools工具"></p>
-<p>3）等待软件安装完成，如图所示：<br><img src="/" alt="Command Line Tools安装成功"></p>
-</li>
-<li>安装成功后，需在终端输入下面一系列命令：<br>1）<code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN/ /Library/Perl/5.18/SVN</code><br>2）<code>sudo mkdir /Library/Perl/5.18/auto</code><br>3）<code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN/ /Library/Perl/5.18/auto/SVN</code></li>
-</ol>
-<p>通过以上两步，就可以完美的使用<code>SourceTree</code>克隆<code>SVN</code>上的项目，如图所示：</p>
-<p><img src="https://www.zybuluo.com/static/img/my_head.jpg" alt="SourceTree成功克隆SVN库项目"></p>
-<h2 id="u89E3_u51B3_u94FE_u63A5SVN_u5931_u8D25_u7684_u53C2_u8003"><a href="#u89E3_u51B3_u94FE_u63A5SVN_u5931_u8D25_u7684_u53C2_u8003" class="headerlink" title="解决链接SVN失败的参考"></a>解决链接SVN失败的参考</h2><p><a href="http://www.jianshu.com/p/38d92385e0f6" target="_blank" rel="external">http://www.jianshu.com/p/38d92385e0f6</a><br><a href="http://www.contrid.co.za/2015/07/mac-os-x-install-command-line-tools-without-xcode/" target="_blank" rel="external">http://www.contrid.co.za/2015/07/mac-os-x-install-command-line-tools-without-xcode/</a><br><a href="http://www.contrid.co.za/2014/10/solved-os-x-yosemite-git-svn-broken/" target="_blank" rel="external">http://www.contrid.co.za/2014/10/solved-os-x-yosemite-git-svn-broken/</a><br><a href="http://apple.stackexchange.com/questions/208300/issue-with-creating-a-symbolic-link-inside-system-folder" target="_blank" rel="external">http://apple.stackexchange.com/questions/208300/issue-with-creating-a-symbolic-link-inside-system-folder</a><br><a href="http://tech.myonlylonely.com/sourcetree在yosemite下提交到sae的一些问题解决/#codesyntax_1" target="_blank" rel="external">http://tech.myonlylonely.com/sourcetree在yosemite下提交到sae的一些问题解决/#codesyntax_1</a></p>
-
       
     </div>
     
@@ -229,11 +215,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SourceTree-SVN-git/">SourceTree SVN git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVN/">SVN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SourceTree/">SourceTree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/02/SourceTree成功访问SVN/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
