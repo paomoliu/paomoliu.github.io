@@ -21,7 +21,7 @@ SourceTree简介SourceTree是Windows和Mac OS下免费的git和hg客户端，同
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162352.png">
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162405.png">
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162426.png">
-<meta property="og:updated_time" content="2016-08-05T05:44:00.000Z">
+<meta property="og:updated_time" content="2016-08-05T05:54:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SourceTree成功访问SVN">
 <meta name="twitter:description" content="个人比较喜欢使用SourceTree，以前从未使用它访问过SVN。由于实习，公司使用的SVN管理项目源码，因而有了SourceTree访问SVN的尝试。在这个过程中遇到很多的坑，所以做个总结，方便自己以后查看。
@@ -236,15 +236,7 @@ SourceTree简介SourceTree是Windows和Mac OS下免费的git和hg客户端，同
 <p><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162307.png" alt="SVN链接失败"></p>
 <p><code>Can’t locate SVN/Core.pm in @INC (you may need to install the SVN::Core module)</code>。这个问题大致是Per的<code>SVN</code>没有正确和<code>Xcode</code>中的<code>SVN</code>链接起来。解决的步骤如下：</p>
 <ol>
-<li>安装<code>Xcode</code>的<code>Command Line Tools</code>组件<br>安装步骤如下：<br>1）输入终端命令：</li>
-</ol>
-<p><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162325.png" alt="安装Xcode组件终端命令"></p>
-<p>2）然后出现下图，点击“安装”：</p>
-<p><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162338.png" alt="安装Command Line Tools工具"></p>
-<p><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162352.png" alt="等待安装Command Line Tools工具"></p>
-<p>3）等待软件安装完成，如图所示：</p>
-<p><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162405.png" alt="Command Line Tools安装成功"></p>
-<ol>
+<li>安装<code>Xcode</code>的<code>Command Line Tools</code>组件<br>安装步骤如下：<br>1）输入终端命令：<br><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162325.png" alt="安装Xcode组件终端命令"><br>2）然后出现下图，点击“安装”：<br><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162338.png" alt="安装Command Line Tools工具"><br><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162352.png" alt="等待安装Command Line Tools工具"><br>3）等待软件安装完成，如图所示：<br><img src="http://oba1xw7oy.bkt.clouddn.com/SourceTree/20160802162405.png" alt="Command Line Tools安装成功"></li>
 <li>安装成功后，需在终端输入下面一系列命令：<br>1）<code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN/ /Library/Perl/5.18/SVN</code><br>2）<code>sudo mkdir /Library/Perl/5.18/auto</code><br>3）<code>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN/ /Library/Perl/5.18/auto/SVN</code></li>
 </ol>
 <p>通过以上两步，就可以完美的使用<code>SourceTree</code>克隆<code>SVN</code>上的项目，如图所示：</p>
