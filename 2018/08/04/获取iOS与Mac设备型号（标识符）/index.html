@@ -4,17 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: VFL | paomoliu&#39;s blog</title>
+  <title>获取iOS与Mac设备型号（标识符） | paomoliu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="paomoliu's blog">
-<meta property="og:url" content="http://paomoliu.github.io/tags/VFL/index.html">
+  <meta name="description" content="iOS设备型号（标识符）+ (NSString *)machineName {
+    struct utsname systemInfo;
+    uname(&amp;amp;systemInfo);
+    NSString *machineName = @&amp;quot;&amp;quot;;
+    machineName = [NSString stringWithCString:systemInfo.m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="获取iOS与Mac设备型号（标识符）">
+<meta property="og:url" content="http://paomoliu.github.io/2018/08/04/获取iOS与Mac设备型号（标识符）/index.html">
 <meta property="og:site_name" content="paomoliu's blog">
-<meta property="og:description">
+<meta property="og:description" content="iOS设备型号（标识符）+ (NSString *)machineName {
+    struct utsname systemInfo;
+    uname(&amp;amp;systemInfo);
+    NSString *machineName = @&amp;quot;&amp;quot;;
+    machineName = [NSString stringWithCString:systemInfo.m">
+<meta property="og:updated_time" content="2018-08-04T04:33:37.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="paomoliu's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="获取iOS与Mac设备型号（标识符）">
+<meta name="twitter:description" content="iOS设备型号（标识符）+ (NSString *)machineName {
+    struct utsname systemInfo;
+    uname(&amp;amp;systemInfo);
+    NSString *machineName = @&amp;quot;&amp;quot;;
+    machineName = [NSString stringWithCString:systemInfo.m">
   
   
     <link rel="icon" href="/favicon.png">
@@ -169,53 +182,127 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-获取iOS与Mac设备型号（标识符）" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/10/AutoLayout学习总结（纯代码）/" class="archive-article-date">
-  	<time datetime="2016-01-10T09:38:12.000Z" itemprop="datePublished">Jan 10</time>
+    <div class="article-meta">
+      <a href="/2018/08/04/获取iOS与Mac设备型号（标识符）/" class="article-date">
+  	<time datetime="2018-08-04T04:33:00.000Z" itemprop="datePublished">Aug 4 2018</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/10/AutoLayout学习总结（纯代码）/">AutoLayout学习总结（纯代码）</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      获取iOS与Mac设备型号（标识符）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AutoLayout/">AutoLayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="iOS设备型号（标识符）"></a>iOS设备型号（标识符）</h2><pre><code>+ (NSString *)machineName {
+    struct utsname systemInfo;
+    uname(&amp;systemInfo);
+    NSString *machineName = @&quot;&quot;;
+    machineName = [NSString stringWithCString:systemInfo.machine
+                                     encoding:NSUTF8StringEncoding];
+    return  machineName;
+ }
+</code></pre><h2 id="Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="Mac设备型号（标识符）"></a>Mac设备型号（标识符）</h2><pre><code>+ (NSString *)machineName:(NSString *)name {
+    size_t size;
+    sysctlbyname(name, NULL, &amp;size, NULL, 0);
+    char *machine = (char *)malloc(size);
+    sysctlbyname(name, machine, &amp;size, NULL, 0);
+    NSString *machineName = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
+    free(machine);
+
+    return machineName;
+ }
+</code></pre><p>使用<code>sysctlbyname</code>需添加头文件<code>#include &lt;sys/sysctl.h&gt;</code>；<br>对于该方法，iOS也可以使用该方式获取标识符，iOS传<code>hw.machine</code>，Mac传<code>hw.model</code>；</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/02/SourceTree成功访问SVN/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SourceTree成功访问SVN</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="获取iOS与Mac设备型号（标识符）" data-title="获取iOS与Mac设备型号（标识符）" data-url="http://paomoliu.github.io/2018/08/04/获取iOS与Mac设备型号（标识符）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -241,9 +328,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true
 	}
