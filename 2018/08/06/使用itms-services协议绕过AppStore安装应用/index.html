@@ -4,17 +4,40 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>paomoliu&#39;s blog</title>
+  <title>使用itms-services协议绕过AppStore安装应用 | paomoliu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="paomoliu's blog">
-<meta property="og:url" content="http://paomoliu.github.io/index.html">
+  <meta name="description" content="最近产品给了一个新需求：对于现有的升级流程，添加一个绕过AppStore安装应用的入口（直接使用链接覆盖安装），用于走定制的客户使用。
+
+苹果企业开发者账号开发的App不能上架到AppStore，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，App也不用审核。
+
+企业开发者账号开发的App就适用于上诉需求。
+
+苹果公司开发者账号开发的App能上架到AppStore，对外的用户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用itms-services协议绕过AppStore安装应用">
+<meta property="og:url" content="http://paomoliu.github.io/2018/08/06/使用itms-services协议绕过AppStore安装应用/index.html">
 <meta property="og:site_name" content="paomoliu's blog">
-<meta property="og:description">
+<meta property="og:description" content="最近产品给了一个新需求：对于现有的升级流程，添加一个绕过AppStore安装应用的入口（直接使用链接覆盖安装），用于走定制的客户使用。
+
+苹果企业开发者账号开发的App不能上架到AppStore，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，App也不用审核。
+
+企业开发者账号开发的App就适用于上诉需求。
+
+苹果公司开发者账号开发的App能上架到AppStore，对外的用户">
+<meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-08-06%20%E4%B8%8A%E5%8D%8811.27.37.png">
+<meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-08-06%20%E4%B8%8A%E5%8D%8811.35.46.png">
+<meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3062.png">
+<meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3063.png">
+<meta property="og:updated_time" content="2018-08-06T13:02:46.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="paomoliu's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="使用itms-services协议绕过AppStore安装应用">
+<meta name="twitter:description" content="最近产品给了一个新需求：对于现有的升级流程，添加一个绕过AppStore安装应用的入口（直接使用链接覆盖安装），用于走定制的客户使用。
+
+苹果企业开发者账号开发的App不能上架到AppStore，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，App也不用审核。
+
+企业开发者账号开发的App就适用于上诉需求。
+
+苹果公司开发者账号开发的App能上架到AppStore，对外的用户">
   
   
     <link rel="icon" href="/favicon.png">
@@ -169,9 +192,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-使用itms-services协议绕过AppStore安装应用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-使用itms-services协议绕过AppStore安装应用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/08/06/使用itms-services协议绕过AppStore安装应用/" class="article-date">
@@ -187,12 +208,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/06/使用itms-services协议绕过AppStore安装应用/">使用itms-services协议绕过AppStore安装应用</a>
+    <h1 class="article-title" itemprop="name">
+      使用itms-services协议绕过AppStore安装应用
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/itms-services/">itms-services</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -241,410 +273,68 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/itms-services/">itms-services</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/04/获取iOS与Mac设备型号（标识符）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">获取iOS与Mac设备型号（标识符）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-获取iOS与Mac设备型号（标识符）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/04/获取iOS与Mac设备型号（标识符）/" class="article-date">
-  	<time datetime="2018-08-04T04:33:00.000Z" itemprop="datePublished">Aug 4 2018</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/04/获取iOS与Mac设备型号（标识符）/">获取iOS与Mac设备型号（标识符）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="iOS设备型号（标识符）"></a>iOS设备型号（标识符）</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)machineName &#123;</span><br><span class="line">    <span class="keyword">struct</span> utsname systemInfo;</span><br><span class="line">    uname(&amp;systemInfo);</span><br><span class="line">    <span class="built_in">NSString</span> *machineName = <span class="string">@""</span>;</span><br><span class="line">    machineName = [<span class="built_in">NSString</span> stringWithCString:systemInfo<span class="variable">.machine</span></span><br><span class="line">                                     encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">    <span class="keyword">return</span> machineName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="Mac设备型号（标识符）"></a>Mac设备型号（标识符）</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)machineName:(<span class="built_in">NSString</span> *)name &#123;</span><br><span class="line">    size_t size;</span><br><span class="line">    sysctlbyname(name, <span class="literal">NULL</span>, &amp;size, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">char</span> *machine = (<span class="keyword">char</span> *)malloc(size);</span><br><span class="line">    sysctlbyname(name, machine, &amp;size, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">NSString</span> *machineName = [<span class="built_in">NSString</span> stringWithCString:machine </span><br><span class="line">                                               encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">    free(machine);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> machineName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用<code>sysctlbyname</code>需添加头文件<code>#include &lt;sys/sysctl.h&gt;</code>；<br>对于该方法，iOS也可以使用来获取标识符，iOS传<code>hw.machine</code>，Mac传<code>hw.model</code>；</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-      
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="使用itms-services协议绕过AppStore安装应用" data-title="使用itms-services协议绕过AppStore安装应用" data-url="http://paomoliu.github.io/2018/08/06/使用itms-services协议绕过AppStore安装应用/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-  
-    <article id="post-SourceTree成功访问SVN" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/02/SourceTree成功访问SVN/" class="article-date">
-  	<time datetime="2016-08-02T09:45:23.000Z" itemprop="datePublished">Aug 2 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/02/SourceTree成功访问SVN/">SourceTree成功访问SVN</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>个人比较喜欢使用<code>SourceTree</code>，以前从未使用它访问过<code>SVN</code>。由于实习，公司使用的<code>SVN</code>管理项目源码，因而有了<code>SourceTree</code>访问<code>SVN</code>的尝试。在这个过程中遇到很多的坑，所以做个总结，方便自己以后查看。</p>
-<h2 id="SourceTree_u7B80_u4ECB"><a href="#SourceTree_u7B80_u4ECB" class="headerlink" title="SourceTree简介"></a>SourceTree简介</h2><p><code>SourceTree</code>是Windows和Mac OS下免费的<code>git</code>和<code>hg</code>客户端，同时也是Mercurial和Subversion版本控制系统工具。支持创建、克隆、提交、<code>push</code>、<code>pull</code>和合并等操作。</p>
-<h2 id="SourceTree_u5B89_u88C5"><a href="#SourceTree_u5B89_u88C5" class="headerlink" title="SourceTree安装"></a>SourceTree安装</h2><p>不建议直接从App Store搜索下载<code>SourceTree</code>，因为App Store里的版本太低。建议直接前往官网下载。安装步骤如下：</p>
-<ol>
-<li>下载最新版<code>SourceTree</code>；</li>
-<li>双击打开压缩包的<code>.dmg</code>文件，将<code>SourceTree</code>的App应用拖放到<code>Applications</code>里；</li>
-<li>在Lanchpad中找到<code>SourceTree</code>并打开它；</li>
-<li>接受协议，Continue；</li>
-<li>设置指定的账户登录（我一般使用<code>github</code>帐号进行登录），也可以直接Skip该步骤；</li>
-<li>安装成功。</li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVN/">SVN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SourceTree/">SourceTree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/02/SourceTree成功访问SVN/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git基础" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/14/git基础/" class="article-date">
-  	<time datetime="2016-02-14T06:29:54.000Z" itemprop="datePublished">Feb 14 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/14/git基础/">git基础</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在大一下的一门选修课上第一次接触到<code>git</code>，当时所有的操作都是在<code>Linux</code>系统下进行，觉得十分的深奥。在后面的学习中，偶尔会用一用一些基本的命令，最近发现关于<code>git</code>的一些内容都忘了一些，于是重新拾起当时老师讲的课件，做一个复习总结，也方便自己以后查阅。</p>
-<p>本章介绍使用<code>git</code>前的基础知识，了解版本控制系统（VCS），<code>git</code>项目的三个区域。下一篇总结<code>git</code>的常见用法。</p>
-<h2 id="1-__u4EC0_u4E48_u662F_u7248_u672C_u63A7_u5236_uFF1F"><a href="#1-__u4EC0_u4E48_u662F_u7248_u672C_u63A7_u5236_uFF1F" class="headerlink" title="1. 什么是版本控制？"></a>1. 什么是版本控制？</h2><p>版本控制是一种用于跟踪文件版本的系统，可以记录若干文件的内容变化，以便将来查阅特定版本修订情况。我们可以对任何类型的文件进行版本控制。</p>
-<p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本。采用版本控制系统是个明智的选择。有了它就可以将某个文件回溯到之前的状态，甚至将整个项目回退到过去某个时间点的状态。</p>
-<p>许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。这么做唯一的好处就是简单，不过坏处却不少：有时会混淆所在的工作目录，弄错了文件丢了数据就没了后退的路。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/14/git基础/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-NSAttributedString与NSMutableAttributedString学习总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/01/NSAttributedString与NSMutableAttributedString学习总结/" class="article-date">
-  	<time datetime="2016-02-01T05:05:28.000Z" itemprop="datePublished">Feb 1 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/01/NSAttributedString与NSMutableAttributedString学习总结/">NSAttributedString与NSMutableAttributedString学习总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在研究<a href="http://git.oschina.net/oschina/iphone-app">开源中国</a>的源代码过程中，发现它里面的评论、点赞等按钮既有图又有文字，即所谓的<strong>图文混排</strong>，并不是我所想的<code>UIImageView＋UIButton</code>。里面还有一些属性字符串，支持链接、@等。这些都是利用<a href="https://github.com/Cocoanetics/DTCoreText">DTCoreText
-</a>和<a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel">TTTAttributedLabel
-</a>两个第三方库实现。于是想自己了解一下富文本相关的知识，开始学习该部分内容，做个小总结。这篇总结主要是参考官方文档。</p>
-<p><code>NSAttributedString</code>可以对字符串附加格式信息，比如字体和段落对齐。可以在整个字符串上使用这些元数据，也可以对字符串的不同部分使用不同的属性。其字符串是<strong>只读</strong>的。我们将字符与属性的关联称为<strong>属性字符串（attributed string）</strong>。<code>NSMutableAttributedString</code>是<code>NSAttributedString</code>的子类，它是可修改的属性字符串。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/richtext/">richtext</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/01/NSAttributedString与NSMutableAttributedString学习总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-AutoLayout学习总结（纯代码）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/AutoLayout学习总结（纯代码）/" class="article-date">
-  	<time datetime="2016-01-10T09:38:12.000Z" itemprop="datePublished">Jan 10 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/AutoLayout学习总结（纯代码）/">AutoLayout学习总结（纯代码）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从15年3月正式准备做ios开发，到五月底，团队完成属于我们的第一个App，一直没有使用<code>AutoLayout</code>进行布局，当时觉得这个东西好复杂、好难，再加上项目赶得急，就把它丢在一边。在15年接下来的几个月里，没怎么撸码，一直停留在书本上。偶尔遇到一点<code>AutoLayout</code>，会去搜点博客，了解一丢丢<code>AutoLayout</code>。后来发现公司里好多都用<code>AutoLayout</code>，再加上最近在研究<a href="http://git.oschina.net/oschina/iphone-app">开源中国</a>的源代码，它使用<code>AutoLayout</code>纯代码进行布局（主要是<code>VFL</code>），所以决定在出去找工作前，把欠的<code>AutoLayout</code>补起来。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AutoLayout/">AutoLayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/10/AutoLayout学习总结（纯代码）/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-MengTime实现过程遇到的问题总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/07/MengTime实现过程遇到的问题总结/" class="article-date">
-  	<time datetime="2016-01-07T08:53:54.000Z" itemprop="datePublished">Jan 7 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/07/MengTime实现过程遇到的问题总结/">MengTime实现过程遇到的问题总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-_XCTest/XCTest-h_file_not_found"><a href="#1-_XCTest/XCTest-h_file_not_found" class="headerlink" title="1. XCTest/XCTest.h file not found"></a>1. XCTest/XCTest.h file not found</h3><p>解决方法：<br>在报错的<code>target</code>的<code>Building Settings</code>中的<code>Framwork Search Paths</code>添加<code>$(PLATFORM_DIR)/Developer/Library/Frameworks</code></p>
-<h3 id="2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found"><a href="#2-_Xcode_u5347_u7EA7_u52307-2_u540E_uFF0C_u9879_u76EE_u4E2D_u51FA_u73B0_u201Dxxx-h_u201D_file_not_found" class="headerlink" title="2. Xcode升级到7.2后，项目中出现”xxx.h” file not found"></a>2. Xcode升级到7.2后，项目中出现”xxx.h” file not found</h3><p>解决方法：<br>在项目中的<code>Header Search Paths</code>中添加<code>$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME/include</code><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/07/MengTime实现过程遇到的问题总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -668,8 +358,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

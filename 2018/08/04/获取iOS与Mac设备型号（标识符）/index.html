@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>获取iOS与Mac设备型号（标识符） | paomoliu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS设备型号（标识符）12345678+ (NSString *)machineName &amp;#123;struct utsname systemInfo;uname(&amp;amp;systemInfo);NSString *machineName = @&quot;&quot;;machineName = [NSString stringWithCString:systemInfo.machineencoding:NS">
+  <meta name="description" content="iOS设备型号（标识符）12345678+ (NSString *)machineName &amp;#123;    struct utsname systemInfo;    uname(&amp;amp;systemInfo);    NSString *machineName = @&quot;&quot;;    machineName = [NSString stringWithCString:systemInfo.ma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取iOS与Mac设备型号（标识符）">
 <meta property="og:url" content="http://paomoliu.github.io/2018/08/04/获取iOS与Mac设备型号（标识符）/index.html">
 <meta property="og:site_name" content="paomoliu's blog">
-<meta property="og:description" content="iOS设备型号（标识符）12345678+ (NSString *)machineName &amp;#123;struct utsname systemInfo;uname(&amp;amp;systemInfo);NSString *machineName = @&quot;&quot;;machineName = [NSString stringWithCString:systemInfo.machineencoding:NS">
-<meta property="og:updated_time" content="2018-08-04T04:55:28.790Z">
+<meta property="og:description" content="iOS设备型号（标识符）12345678+ (NSString *)machineName &amp;#123;    struct utsname systemInfo;    uname(&amp;amp;systemInfo);    NSString *machineName = @&quot;&quot;;    machineName = [NSString stringWithCString:systemInfo.ma">
+<meta property="og:updated_time" content="2018-08-06T12:57:25.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取iOS与Mac设备型号（标识符）">
-<meta name="twitter:description" content="iOS设备型号（标识符）12345678+ (NSString *)machineName &amp;#123;struct utsname systemInfo;uname(&amp;amp;systemInfo);NSString *machineName = @&quot;&quot;;machineName = [NSString stringWithCString:systemInfo.machineencoding:NS">
+<meta name="twitter:description" content="iOS设备型号（标识符）12345678+ (NSString *)machineName &amp;#123;    struct utsname systemInfo;    uname(&amp;amp;systemInfo);    NSString *machineName = @&quot;&quot;;    machineName = [NSString stringWithCString:systemInfo.ma">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,10 +68,10 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>菜单</li>
-						<li>Tags</li>
+						<li>標籤</li>
 						
 						
-						<li>Über</li>
+						<li>關於</li>
 						
 					</ul>
 				</div>
@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SourceTree/" style="font-size: 10px;">SourceTree</a> <a href="/tags/VFL/" style="font-size: 10px;">VFL</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/richtext/" style="font-size: 10px;">richtext</a>
+						<a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SourceTree/" style="font-size: 10px;">SourceTree</a> <a href="/tags/VFL/" style="font-size: 10px;">VFL</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/itms-services/" style="font-size: 10px;">itms-services</a> <a href="/tags/richtext/" style="font-size: 10px;">richtext</a>
 					</div>
 				</section>
 				
@@ -207,8 +207,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="iOS设备型号（标识符）"></a>iOS设备型号（标识符）</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)machineName &#123;</span><br><span class="line"><span class="keyword">struct</span> utsname systemInfo;</span><br><span class="line">uname(&amp;systemInfo);</span><br><span class="line"><span class="built_in">NSString</span> *machineName = <span class="string">@""</span>;</span><br><span class="line">machineName = [<span class="built_in">NSString</span> stringWithCString:systemInfo<span class="variable">.machine</span></span><br><span class="line">encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line"><span class="keyword">return</span>  machineName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="Mac设备型号（标识符）"></a>Mac设备型号（标识符）</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)machineName:(<span class="built_in">NSString</span> *)name &#123;</span><br><span class="line">size_t size;</span><br><span class="line">sysctlbyname(name, <span class="literal">NULL</span>, &amp;size, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">char</span> *machine = (<span class="keyword">char</span> *)malloc(size);</span><br><span class="line">sysctlbyname(name, machine, &amp;size, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">NSString</span> *machineName = [<span class="built_in">NSString</span> stringWithCString:machine </span><br><span class="line">encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">free(machine);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> machineName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#iOS_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="iOS设备型号（标识符）"></a>iOS设备型号（标识符）</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)machineName &#123;</span><br><span class="line">    <span class="keyword">struct</span> utsname systemInfo;</span><br><span class="line">    uname(&amp;systemInfo);</span><br><span class="line">    <span class="built_in">NSString</span> *machineName = <span class="string">@""</span>;</span><br><span class="line">    machineName = [<span class="built_in">NSString</span> stringWithCString:systemInfo<span class="variable">.machine</span></span><br><span class="line">                                     encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">    <span class="keyword">return</span> machineName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09"><a href="#Mac_u8BBE_u5907_u578B_u53F7_uFF08_u6807_u8BC6_u7B26_uFF09" class="headerlink" title="Mac设备型号（标识符）"></a>Mac设备型号（标识符）</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)machineName:(<span class="built_in">NSString</span> *)name &#123;</span><br><span class="line">    size_t size;</span><br><span class="line">    sysctlbyname(name, <span class="literal">NULL</span>, &amp;size, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">char</span> *machine = (<span class="keyword">char</span> *)malloc(size);</span><br><span class="line">    sysctlbyname(name, machine, &amp;size, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">NSString</span> *machineName = [<span class="built_in">NSString</span> stringWithCString:machine </span><br><span class="line">                                               encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">    free(machine);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> machineName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用<code>sysctlbyname</code>需添加头文件<code>#include &lt;sys/sysctl.h&gt;</code>；<br>对于该方法，iOS也可以使用来获取标识符，iOS传<code>hw.machine</code>，Mac传<code>hw.model</code>；</p>
 
       
@@ -218,6 +218,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/08/06/使用itms-services协议绕过AppStore安装应用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用itms-services协议绕过AppStore安装应用
+        
+      </div>
+    </a>
   
   
     <a href="/2016/08/02/SourceTree成功访问SVN/" id="article-nav-older" class="article-nav-link-wrap">
