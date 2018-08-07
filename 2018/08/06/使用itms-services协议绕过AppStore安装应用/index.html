@@ -10,7 +10,7 @@
 
 苹果企业开发者账号开发的App不能上架到AppStore，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，App也不用审核。
 
-企业开发者账号开发的App就适用于上诉需求。
+企业开发者账号开发的App就适用于上述需求。
 
 苹果公司开发者账号开发的App能上架到AppStore，对外的用户">
 <meta property="og:type" content="article">
@@ -21,21 +21,22 @@
 
 苹果企业开发者账号开发的App不能上架到AppStore，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，App也不用审核。
 
-企业开发者账号开发的App就适用于上诉需求。
+企业开发者账号开发的App就适用于上述需求。
 
 苹果公司开发者账号开发的App能上架到AppStore，对外的用户">
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-08-06%20%E4%B8%8A%E5%8D%8811.27.37.png">
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-08-06%20%E4%B8%8A%E5%8D%8811.35.46.png">
+<meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3069.png">
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3062.png">
 <meta property="og:image" content="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3063.png">
-<meta property="og:updated_time" content="2018-08-06T13:17:41.005Z">
+<meta property="og:updated_time" content="2018-08-07T13:41:48.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用itms-services协议绕过AppStore安装应用">
 <meta name="twitter:description" content="最近产品给了一个新需求：对于现有的升级流程，添加一个绕过AppStore安装应用的入口（直接使用链接覆盖安装），用于走定制的客户使用。
 
 苹果企业开发者账号开发的App不能上架到AppStore，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，App也不用审核。
 
-企业开发者账号开发的App就适用于上诉需求。
+企业开发者账号开发的App就适用于上述需求。
 
 苹果公司开发者账号开发的App能上架到AppStore，对外的用户">
   
@@ -233,17 +234,17 @@
 <blockquote>
 <p>苹果<code>企业开发者账号</code>开发的<code>App</code>不能上架到<code>AppStore</code>，只能分发到自己服务器，然后自行下载安装。这种类型账号无设备数量限制，<code>App</code>也不用审核。</p>
 </blockquote>
-<p><code>企业开发者账号</code>开发的<code>App</code>就适用于上诉需求。</p>
+<p><code>企业开发者账号</code>开发的<code>App</code>就适用于上述需求。</p>
 <blockquote>
 <p>苹果<code>公司开发者账号</code>开发的<code>App</code>能上架到<code>AppStore</code>，对外的用户只能通过<code>AppStore</code>下载安装应用。</p>
 </blockquote>
-<p><code>公司开发者账号</code>开发的<code>App</code>，对内可以实现并测试上诉需求，不过最多支持100台设备。我司是该类型开发账号，可用于测试上诉需求。</p>
-<h2 id="itms-services_u534F_u8BAE"><a href="#itms-services_u534F_u8BAE" class="headerlink" title="itms-services协议"></a>itms-services协议</h2><p>想实现上诉需求，需知道一个协议：</p>
+<p><code>公司开发者账号</code>开发的<code>App</code>，对内可以实现并测试上述需求，不过最多支持100台设备。我司是该类型开发账号，可用于测试上述需求。</p>
+<h2 id="itms-services_u534F_u8BAE"><a href="#itms-services_u534F_u8BAE" class="headerlink" title="itms-services协议"></a>itms-services协议</h2><p>想实现上述需求，需知道一个协议：</p>
 <blockquote>
 <p><code>itms-services</code>协议：又叫<code>OTA（Over The Air）</code>空中下载，是<code>Apple</code>在<code>iOS 4</code>中新加的一项技术，目的是让开发者能够脱离<code>AppStore</code>，实现从自己的服务器下载并安装<code>iOS</code>应用。简单地说，就是用户只需要在<code>Safari</code>中点开一条链接，就能直接在主界面中安装<code>App</code>。</p>
 </blockquote>
 <a id="more"></a>
-<p>实现上诉需求，需要准备：</p>
+<p>实现上述需求，需要准备：</p>
 <blockquote>
 <ul>
 <li><code>.ipa</code>安装包</li>
@@ -256,10 +257,11 @@
 <p>对于<code>.plist</code>文件里的地址，可以是<code>HTTP</code>协议，但<code>.plist</code>文件必须<strong>部署在<code>HTTPS</code>协议服务器</strong>上，若暂时无<code>HTTPS</code>协议服务器，可使用<code>GitHub</code>做测试：新建一个<code>GitHub</code>测试仓库，将<code>.plist</code>文件上传，点开<code>.plist</code>文件，选择<code>Raw</code>。<br><img src="http://oba1xw7oy.bkt.clouddn.com/OTA/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-08-06%20%E4%B8%8A%E5%8D%8811.27.37.png" alt="GitHub Raw"></p>
 <p>地址栏地址（如下图）就是<code>.plist</code>文件的地址，若使用其他服务器，就使用服务器地址。<br><img src="http://oba1xw7oy.bkt.clouddn.com/OTA/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-08-06%20%E4%B8%8A%E5%8D%8811.35.46.png" alt="Plist Url"></p>
 <h2 id="u4F7F_u7528itms-services_u534F_u8BAE_u5B89_u88C5App"><a href="#u4F7F_u7528itms-services_u534F_u8BAE_u5B89_u88C5App" class="headerlink" title="使用itms-services协议安装App"></a>使用itms-services协议安装App</h2><p><strong>1. 在Safari中通过链接直接安装App</strong><br>拿到<code>.plist</code>文件地址，就可以使用Safari通过<code>itms-services协议</code>下载安装应用，在Safari输入：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">itms-services:<span class="comment">//?action=download-manifest&amp;url=https://raw.githubusercontent.com/paomoliu/Test/master/cloudFsmeeting.plist</span></span><br></pre></td></tr></table></figure></p>
-<p>其中<code>itms-services://?action=download-manifest&amp;url=</code>固定，<code>url</code>后接<code>.plist</code>文件地址。<br><strong>2. 在项目中通过链接直接安装App</strong><br>在项目中直接使用上诉链接安装应用：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"itms-services://?action=download-manifest&amp;url=https://raw.githubusercontent.com/paomoliu/Test/master/cloudFsmeeting.plist"</span>]];</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>itms-services://?action=download-manifest&amp;url=</code>固定，<code>url</code>后接<code>.plist</code>文件地址。<br><strong>2. 在项目中通过链接直接安装App</strong><br>在项目中直接使用上述链接安装应用：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"itms-services://?action=download-manifest&amp;url=https://raw.githubusercontent.com/paomoliu/Test/master/cloudFsmeeting.plist"</span>]];</span><br></pre></td></tr></table></figure></p>
 <p>当点击安装时，若应用处于前台，则不会立即覆盖安装，需将应用置于后台才会进行覆盖安装，建议此处跳转到浏览器进行下载安装，故引入<code>html</code>文件。</p>
 <h2 id="u8DF3_u8F6C_u5230_u6D4F_u89C8_u5668_u5B89_u88C5App"><a href="#u8DF3_u8F6C_u5230_u6D4F_u89C8_u5668_u5B89_u88C5App" class="headerlink" title="跳转到浏览器安装App"></a>跳转到浏览器安装App</h2><p>测试环境只做个简单的<code>html</code>，提供下载入口用于测试，<code>html</code>文件内容如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">title</span>&gt;</span>iOS 下载<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/HTML; charset=utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"itms-services://?action=download-manifest&amp;url=https://raw.githubusercontent.com/paomoliu/Test/master/cloudFsmeeting.plist"</span>&gt;</span>下载新版本客户端<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>将<code>html</code>文件部署到服务器，服务器不做<code>HTTPS</code>协议限制，然后在项目中使用服务器链接进行跳转安装应用：<br><img src="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3062.png" alt="Html"></p>
+<p>将<code>html</code>文件部署到服务器，服务器不做<code>HTTPS</code>协议限制，然后在项目中使用服务器链接进行跳转安装应用。<br>步骤如下：弹出升级弹框 -&gt; 用户点击“立即更新” -&gt; 跳转到浏览器打开<code>html</code>文件 -&gt; 用户点击“下载新客户端版本” -&gt; 弹出安装提示框 -&gt; 用户点击“安装” -&gt; 开始覆盖安装。<br><img src="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3069.png" alt="Update Alert"></p>
+<p><img src="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3062.png" alt="Html"></p>
 <p><img src="http://oba1xw7oy.bkt.clouddn.com/OTA/IMG_3063.png" alt="Download"></p>
 <p><strong>注：</strong>若出现“无法安装应用程序，因为xxx（服务器IP）的验证无效”，多半是<code>SSL</code>证书问题，切记链接一定要在<code>HTTPS</code>协议下，且证书有效。</p>
 <h2 id="u53C2_u8003_u94FE_u63A5"><a href="#u53C2_u8003_u94FE_u63A5" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jianshu.com/p/1f88cc66809e" target="_blank" rel="external">【iOS 开发】企业开发者账号打包发布 App 到服务器上的流程</a><br><a href="https://www.jianshu.com/p/35ca63ec0d8e" target="_blank" rel="external">一步一步实现无线安装iOS应用(内网OTA)</a></p>
